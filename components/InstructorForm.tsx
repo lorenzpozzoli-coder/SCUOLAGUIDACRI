@@ -17,7 +17,7 @@ const InstructorForm: React.FC<InstructorFormProps> = ({ onAdd }) => {
 
     // Convert date YYYY-MM-DD to DD:MM:YYYY for display as requested
     const [y, m, d] = date.split('-');
-    const displayDate = `${d}:${m}:${y}`;
+    const displayDate = `${d}/${m}/${y}`;
 
     onAdd({
       date,
@@ -35,9 +35,9 @@ const InstructorForm: React.FC<InstructorFormProps> = ({ onAdd }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white p-6 rounded-xl shadow-lg mb-8 border border-blue-100">
-      <h2 className="text-xl font-bold text-gray-800 mb-6 flex items-center gap-2">
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <form onSubmit={handleSubmit} className="bg-white p-4 sm:p-6 rounded-xl shadow-lg mb-6 sm:mb-8 border border-blue-100">
+      <h2 className="text-lg sm:text-xl font-bold text-gray-800 mb-4 sm:mb-6 flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
         </svg>
         Inserisci Nuova Lezione
@@ -50,10 +50,10 @@ const InstructorForm: React.FC<InstructorFormProps> = ({ onAdd }) => {
             required
             value={date}
             onChange={(e) => setDate(e.target.value)}
-            className="w-full border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 border p-2"
+            className="w-full border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 border p-2.5 sm:p-2 text-base sm:text-sm touch-manipulation min-h-[44px] sm:min-h-0"
           />
         </div>
-        <div className="flex gap-2">
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-2">
           <div className="flex-1">
             <label className="block text-sm font-medium text-gray-700 mb-1">Da (HH:MM)</label>
             <input
@@ -61,7 +61,7 @@ const InstructorForm: React.FC<InstructorFormProps> = ({ onAdd }) => {
               required
               value={start}
               onChange={(e) => setStart(e.target.value)}
-              className="w-full border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 border p-2"
+              className="w-full border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 border p-2.5 sm:p-2 text-base sm:text-sm touch-manipulation min-h-[44px] sm:min-h-0"
             />
           </div>
           <div className="flex-1">
@@ -71,7 +71,7 @@ const InstructorForm: React.FC<InstructorFormProps> = ({ onAdd }) => {
               required
               value={end}
               onChange={(e) => setEnd(e.target.value)}
-              className="w-full border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 border p-2"
+              className="w-full border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 border p-2.5 sm:p-2 text-base sm:text-sm touch-manipulation min-h-[44px] sm:min-h-0"
             />
           </div>
         </div>
@@ -83,13 +83,13 @@ const InstructorForm: React.FC<InstructorFormProps> = ({ onAdd }) => {
             placeholder="Nome Istruttore"
             value={instructor}
             onChange={(e) => setInstructor(e.target.value)}
-            className="w-full border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 border p-2"
+            className="w-full border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 border p-2.5 sm:p-2 text-base sm:text-sm touch-manipulation min-h-[44px] sm:min-h-0"
           />
         </div>
         <div className="flex items-end">
           <button
             type="submit"
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2.5 px-4 rounded-lg transition-colors shadow-md shadow-blue-200"
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 sm:py-2.5 px-4 rounded-lg transition-colors shadow-md shadow-blue-200 touch-manipulation min-h-[48px] sm:min-h-0"
           >
             Aggiungi Record
           </button>
