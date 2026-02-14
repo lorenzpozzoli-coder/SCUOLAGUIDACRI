@@ -1,0 +1,5 @@
+{
+  "name": "GESTIONE SCUOLA GUIDA CRI",
+  "description": "Una web app per la gestione di orari e prenotazioni lezioni, con accesso differenziato per istruttori (inserimento) e allievi (prenotazione).",
+  "requestFramePermissions": []
+}
