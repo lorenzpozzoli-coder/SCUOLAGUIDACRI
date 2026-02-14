@@ -50,12 +50,12 @@ const App: React.FC = () => {
 
   const handleAddLesson = async (data: Omit<Lesson, 'id' | 'student' | 'createdAt'>) => {
     await storageService.saveLesson(data);
-    if (!isCloud) await loadData();
+    await loadData();
   };
 
   const handleBookLesson = async (lessonId: string, studentName: string) => {
     await storageService.updateStudent(lessonId, studentName);
-    if (!isCloud) await loadData();
+    await loadData();
   };
 
   const handleDeleteRequest = (lessonId: string) => {
@@ -72,7 +72,7 @@ const App: React.FC = () => {
         setShowDeleteModal(false);
         setLessonToDelete(null);
         setDeletePasswordInput('');
-        if (!isCloud) await loadData();
+        await loadData();
       }
     } else {
       setDeleteError('Password errata.');
